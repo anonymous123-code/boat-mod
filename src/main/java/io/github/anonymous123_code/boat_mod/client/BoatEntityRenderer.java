@@ -38,11 +38,7 @@ public class BoatEntityRenderer extends EntityRenderer<BoatEntity> {
 
 		this.model.render(matrices, vertexConsumers.getBuffer(
 				this.model.getLayer(this.getTexture(entity))),
-				light, OverlayTexture.DEFAULT_UV,
-				1.0F,
-				1.0F,
-				1.0F,
-				1.0F);
+				light, OverlayTexture.DEFAULT_UV);
 
 		matrices.pop();
 		super.render(entity, yaw, tickDelta, matrices, vertexConsumers, light);

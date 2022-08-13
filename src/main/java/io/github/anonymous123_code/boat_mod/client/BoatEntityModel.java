@@ -48,4 +48,8 @@ public class BoatEntityModel extends EntityModel<Entity> {
 	public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
 		boat_main.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
 	}
+
+	public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay) {
+		boat_main.render(matrices, vertexConsumer, light, overlay);
+	}
 }
