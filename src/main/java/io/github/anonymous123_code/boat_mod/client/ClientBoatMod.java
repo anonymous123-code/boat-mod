@@ -1,8 +1,6 @@
 package io.github.anonymous123_code.boat_mod.client;
 
 import io.github.anonymous123_code.boat_mod.BoatMod;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.entity.model.EntityModelLayer;

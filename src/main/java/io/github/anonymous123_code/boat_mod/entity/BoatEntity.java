@@ -19,7 +19,7 @@ public class BoatEntity extends Entity {
 
 	@Override
 	protected float getEyeHeight(EntityPose pose, EntityDimensions dimensions) {
-		return 1;
+		return 1.5f;
 	}
 
 	@Override

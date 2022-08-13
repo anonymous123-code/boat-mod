@@ -16,13 +16,26 @@ import net.minecraft.entity.Entity;
 @Environment(EnvType.CLIENT)
 public class BoatEntityModel extends EntityModel<Entity> {
 	private final ModelPart boat_main;
+
+	private final ModelPart water_patch;
 	public BoatEntityModel(ModelPart root) {
+		this.water_patch = root.getChild("water_patch");
 		this.boat_main = root.getChild("boat_main");
 	}
+
+	public ModelPart getWaterPatch() {
+		return water_patch;
+	}
+
 	public static TexturedModelData getTexturedModelData() {
 		ModelData modelData = new ModelData();
+
 		ModelPartData modelPartData = modelData.getRoot();
-		ModelPartData bb_main = modelPartData.addChild("boat_main", ModelPartBuilder.create().uv(0, 80).cuboid(-24.0F, -8.0F, -8.0F, 48.0F, 8.0F, 16.0F, new Dilation(0.0F))
+		ModelPartData water_patch = modelPartData.addChild("water_patch", ModelPartBuilder.create()
+				.uv(0, 0).cuboid(-24.0F, -19.0F, -8.0F, 48.0F, 3.0F, 16.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
+
+		ModelPartData bb_main = modelPartData.addChild("boat_main", ModelPartBuilder.create()
+				.uv(0, 80).cuboid(-24.0F, -4.0F, -8.0F, 48.0F, 8.0F, 16.0F, new Dilation(0.0F))
 				.uv(0, 64).cuboid(-32.0F, -16.0F, -16.0F, 64.0F, 8.0F, 8.0F, new Dilation(0.0F))
 				.uv(0, 48).cuboid(-32.0F, -16.0F, 8.0F, 64.0F, 8.0F, 8.0F, new Dilation(0.0F))
 				.uv(144, 8).cuboid(-48.0F, -16.0F, -8.0F, 24.0F, 8.0F, 16.0F, new Dilation(0.0F))
@@ -50,6 +63,6 @@ public class BoatEntityModel extends EntityModel<Entity> {
 	}
 
 	public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay) {
-		boat_main.render(matrices, vertexConsumer, light, overlay);
+		this.render(matrices, vertexConsumer, light, overlay, 1.0f, 1.0f, 1.0f, 1.0f);
 	}
 }

@@ -1,9 +1,11 @@
 package io.github.anonymous123_code.boat_mod.client;
 
+import com.mojang.blaze3d.vertex.VertexConsumer;
 import io.github.anonymous123_code.boat_mod.entity.BoatEntity;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.OverlayTexture;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
@@ -39,6 +41,11 @@ public class BoatEntityRenderer extends EntityRenderer<BoatEntity> {
 		this.model.render(matrices, vertexConsumers.getBuffer(
 				this.model.getLayer(this.getTexture(entity))),
 				light, OverlayTexture.DEFAULT_UV);
+
+		if (!entity.isSubmergedInWater()) {
+			VertexConsumer vertexConsumer2 = vertexConsumers.getBuffer(RenderLayer.getWaterMask());
+			model.getWaterPatch().render(matrices, vertexConsumer2, light, OverlayTexture.DEFAULT_UV);
+		}
 
 		matrices.pop();
 		super.render(entity, yaw, tickDelta, matrices, vertexConsumers, light);
