@@ -1,25 +1,25 @@
 {
 	"schema_version": 1,
 	"quilt_loader": {
-		"group": "com.example",
-		"id": "example_mod",
+		"group": "io.github.anonymous123-code",
+		"id": "boat_mod",
 		"version": "${version}",
 		"metadata": {
-			"name": "Mod Name",
-			"description": "A short description of your mod.",
+			"name": "Boat Mod",
+			"description": "A Modfest: Singularity mod about boats",
 			"contributors": {
-				"Your name here": "Owner"
+				"anonymous123-code": "Owner"
 			},
 			"contact": {
-				"homepage": "https://example.com/",
-				"issues": "https://github.com/QuiltMC/quilt-template-mod/issues",
-				"sources": "https://github.com/QuiltMC/quilt-template-mod"
+				"homepage": "https://anonymous123-code.github.io/",
+				"issues": "https://github.com/anonymous123-code/potion-mod/issues",
+				"sources": "https://github.com/anonymous123-code/potion-mod"
 			},
-			"icon": "assets/example_mod/icon.png"
+			"icon": "assets/boat_mod/icon.png"
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"init": "com.example.example_mod.ExampleMod"
+			"init": "io.github.anonymous123_code.boat_mod.BoatMod"
 		},
 		"depends": [
 			{
