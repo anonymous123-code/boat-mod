@@ -19,7 +19,8 @@
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"init": "io.github.anonymous123_code.boat_mod.BoatMod"
+			"init": "io.github.anonymous123_code.boat_mod.BoatMod",
+			"client_init": "io.github.anonymous123_code.boat_mod.client.ClientBoatMod"
 		},
 		"depends": [
 			{
