@@ -35,7 +35,7 @@ public class BoatEntityModel extends EntityModel<Entity> {
 				.uv(0, 0).cuboid(-24.0F, -19.0F, -8.0F, 48.0F, 3.0F, 16.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
 
 		ModelPartData bb_main = modelPartData.addChild("boat_main", ModelPartBuilder.create()
-				.uv(0, 80).cuboid(-24.0F, -4.0F, -8.0F, 48.0F, 8.0F, 16.0F, new Dilation(0.0F))
+				.uv(0, 80).cuboid(-24.0F, -8.0F, -8.0F, 48.0F, 8.0F, 16.0F, new Dilation(0.0F))
 				.uv(0, 64).cuboid(-32.0F, -16.0F, -16.0F, 64.0F, 8.0F, 8.0F, new Dilation(0.0F))
 				.uv(0, 48).cuboid(-32.0F, -16.0F, 8.0F, 64.0F, 8.0F, 8.0F, new Dilation(0.0F))
 				.uv(144, 8).cuboid(-48.0F, -16.0F, -8.0F, 24.0F, 8.0F, 16.0F, new Dilation(0.0F))
