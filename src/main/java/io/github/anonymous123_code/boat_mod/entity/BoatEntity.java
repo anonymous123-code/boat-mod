@@ -14,7 +14,7 @@ import net.minecraft.world.World;
  * @author anonymous123-code
  */
 public class BoatEntity extends Entity {
-	Vec3d lastPos = Vec3d.ZERO;
+	LocationState lastState = LocationState.SWIMMING;
 
 
 	public BoatEntity(EntityType<? extends Entity> entityType, World world) {
@@ -38,11 +38,12 @@ public class BoatEntity extends Entity {
 			case AIR -> {
 				this.setVelocity(this.getVelocity().add(0,-0.02,0));
 				double absVel = this.getVelocity().length();
-				this.setVelocity(this.getVelocity().multiply(1/absVel*Math.min(Math.max(absVel, -0.3), 0.3)));
+				this.setVelocity(this.getVelocity().multiply(1/absVel*Math.min(Math.max(absVel, Math.max(-0.3, Math.floor((this.getPos().y+0.5)) - (this.getPos().y+0.5))), 0.3)));
 			}
 			case SUBMERGED -> this.setVelocity(0, -0.02, 0);
 			case SWIMMING, LAND -> this.setVelocity(Vec3d.ZERO);
 		}
+		lastState = locationState;
 		this.move(MovementType.SELF, this.getVelocity());
 	}
 
@@ -53,7 +54,7 @@ public class BoatEntity extends Entity {
 		}
 		FluidState blockPosFluidStateBelow = this.getWorld().getFluidState(new BlockPos(this.getPos().add(0, 1.5, 0)).down());
 		if ((blockPosFluidStateBelow.isOf(Fluids.FLOWING_WATER) || blockPosFluidStateBelow.isOf(Fluids.WATER)) &&
-			true
+			this.getY() - Math.floor(this.getY()) < 0.3
 		) {
 			return LocationState.SWIMMING;
 		}
