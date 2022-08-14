@@ -1,3 +1,14 @@
+
+
+
+
+# Credits
+The collision logic was taken from [Create Fabric](https://github.com/Fabricators-of-Create/Create) and licensed under the MIT license
+
+
+
+---
+
 # Quilt Template Mod
 
 The official Quilt template Mod. You can use it as a template for your own mods!
